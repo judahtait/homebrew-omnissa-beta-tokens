@@ -1,0 +1,30 @@
+# Homebrew Cask — Omnissa Beta Token Utility
+#
+#   brew tap judahtait/omnissa-beta-tokens
+#   brew install --cask omnissa-beta-token-utility
+#
+# Maintainers: bump `version` + `sha256` when replacing the release zip
+# on https://github.com/judahtait/omnissa-beta-tokens/releases
+
+cask "omnissa-beta-token-utility" do
+  version "0.1.0"
+  sha256 "d0aaafa867a6cbc336d3685eb7d3051b85e0c758b3f846674b0032167dee4a4f"
+
+  url "https://github.com/judahtait/omnissa-beta-tokens/releases/download/v#{version}/Omnissa-Beta-Token-Utility-#{version}-macos.zip"
+  name "Omnissa Beta Token Utility"
+  desc "Fetch AppleSeed beta enrollment tokens for Workspace ONE UEM"
+  homepage "https://github.com/judahtait/omnissa-beta-tokens"
+
+  depends_on macos: ">= :ventura"
+
+  app "Omnissa Beta Token Utility.app"
+
+  zap trash: [
+    "~/.omnissa-beta-tokens",
+  ]
+
+  caveats <<~EOS
+    Apple Business service name (also copied by the app):
+      Workspace One AppleSeed Beta Token Service
+  EOS
+end
