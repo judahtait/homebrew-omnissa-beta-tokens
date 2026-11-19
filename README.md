@@ -4,6 +4,7 @@ Homebrew tap for [Omnissa Beta Token Utility](https://github.com/judahtait/omnis
 
 ```bash
 brew tap judahtait/omnissa-beta-tokens
+brew trust judahtait/omnissa-beta-tokens
 brew install --cask omnissa-beta-token-utility
 ```
 
